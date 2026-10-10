@@ -1,0 +1,31 @@
+:root {
+  --bg: #0e0e0f;
+  --bg-elevated: #161618;
+  --bg-card: #1a1a1d;
+  --bg-card-hover: #222226;
+  --bg-alt: #141416;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --text: #f0f0ee;
+  --text-muted: #a8a8a4;
+  --text-dim: #737370;
+
+  --accent: #c4a882;
+  --accent-2: #6b8f9c;
+  --accent-soft: rgba(196, 168, 130, 0.12);
+  --accent-glow: rgba(196, 168, 130, 0.1);
+  --status: #8fa68f;
+
+  --gradient-hero: radial-gradient(ellipse 70% 55% at 80% 10%, rgba(196, 168, 130, 0.07), transparent 60%),
+    radial-gradient(ellipse 50% 45% at 5% 90%, rgba(107, 143, 156, 0.06), transparent 55%);
+
+  --font: 'Onest', system-ui, sans-serif;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --max: 1180px;
+  --nav-h: 72px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 16px 48px rgba(0, 0, 0, 0.35);
+}

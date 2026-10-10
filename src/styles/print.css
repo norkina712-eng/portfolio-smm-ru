@@ -1,0 +1,351 @@
+/* Print version — one A4 sheet */
+
+html.print-mode {
+  scroll-behavior: auto;
+}
+
+.print-doc {
+  --print-bg: #faf9f7;
+  --print-paper: #ffffff;
+  --print-text: #1c1c1a;
+  --print-muted: #5c5c58;
+  --print-dim: #8a8a85;
+  --print-border: #e4e2dc;
+  --print-accent: #8b7355;
+  --print-accent-soft: #f3efe8;
+
+  font-family: var(--font);
+  color: var(--print-text);
+  background: var(--print-bg);
+}
+
+.print-doc a {
+  color: var(--print-accent);
+  text-decoration: none;
+}
+
+/* Toolbar */
+.print-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 20px;
+  background: rgba(250, 249, 247, 0.95);
+  border-bottom: 1px solid var(--print-border);
+}
+
+.print-toolbar__back {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--print-muted);
+}
+
+.print-toolbar__btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background: var(--print-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ——— A4 layout (one page) ——— */
+.print-doc--a4 {
+  width: 210mm;
+  min-height: 297mm;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 9mm 10mm 8mm;
+  box-sizing: border-box;
+  font-size: 7.5pt;
+  line-height: 1.35;
+  background: var(--print-paper);
+}
+
+.a4-hero {
+  display: grid;
+  grid-template-columns: 1fr 26mm;
+  gap: 6mm;
+  align-items: start;
+  margin-bottom: 4mm;
+  padding-bottom: 3mm;
+  border-bottom: 1px solid var(--print-border);
+}
+
+.a4-hero__eyebrow {
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--print-accent);
+  margin-bottom: 2mm;
+}
+
+.a4-hero__name {
+  font-size: 17pt;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 1mm;
+}
+
+.a4-hero__name span {
+  color: var(--print-accent);
+}
+
+.a4-hero__role {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--print-muted);
+  margin-bottom: 2mm;
+}
+
+.a4-hero__desc {
+  color: var(--print-muted);
+  margin-bottom: 2mm;
+  font-size: 7.5pt;
+}
+
+.a4-hero__contacts {
+  font-size: 7.5pt;
+  font-weight: 600;
+  margin-bottom: 2mm;
+}
+
+.a4-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2mm 4mm;
+  font-size: 7pt;
+  color: var(--print-muted);
+}
+
+.a4-hero__stats strong {
+  color: var(--print-accent);
+  font-weight: 800;
+}
+
+.a4-hero__photo {
+  width: 26mm;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--print-border);
+}
+
+.a4-hero__photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.a4-section {
+  margin-bottom: 3mm;
+}
+
+.a4-section__title {
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--print-accent);
+  margin-bottom: 1.5mm;
+}
+
+.a4-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm;
+}
+
+.a4-tag {
+  padding: 0.8mm 2mm;
+  border-radius: 999px;
+  font-size: 6.5pt;
+  font-weight: 600;
+  background: var(--print-accent-soft);
+  color: var(--print-accent);
+  border: 1px solid rgba(139, 115, 85, 0.15);
+}
+
+.a4-cases {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 6.8pt;
+}
+
+.a4-cases th {
+  text-align: left;
+  font-size: 6pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--print-dim);
+  padding: 1mm 1.5mm;
+  border-bottom: 1px solid var(--print-border);
+}
+
+.a4-cases td {
+  vertical-align: top;
+  padding: 1.5mm 1.5mm;
+  border-bottom: 1px solid var(--print-border);
+}
+
+.a4-cases__num {
+  width: 5%;
+  font-weight: 800;
+  color: var(--print-dim);
+}
+
+.a4-cases__name {
+  width: 22%;
+}
+
+.a4-cases__name strong {
+  display: block;
+  font-size: 7.2pt;
+  line-height: 1.2;
+}
+
+.a4-cases__name span {
+  display: block;
+  font-size: 6pt;
+  color: var(--print-dim);
+  margin-top: 0.5mm;
+}
+
+.a4-cases__result {
+  width: 38%;
+  color: var(--print-muted);
+}
+
+.a4-cases__result em {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--print-accent);
+  font-size: 6.8pt;
+  margin-bottom: 0.5mm;
+}
+
+.a4-cases__result p {
+  margin: 0;
+  font-size: 6.5pt;
+  line-height: 1.35;
+}
+
+.a4-cases__metrics {
+  width: 30%;
+  font-size: 6.5pt;
+  color: var(--print-text);
+  font-weight: 600;
+}
+
+.a4-section--skills {
+  margin-bottom: 2mm;
+}
+
+.a4-skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5mm 3mm;
+}
+
+.a4-skill {
+  font-size: 6.8pt;
+  line-height: 1.3;
+}
+
+.a4-skill strong {
+  color: var(--print-accent);
+  margin-right: 1mm;
+}
+
+.a4-skill span {
+  color: var(--print-muted);
+}
+
+.a4-footer {
+  margin-top: 2mm;
+  padding-top: 2mm;
+  border-top: 1px solid var(--print-border);
+  font-size: 7pt;
+  font-weight: 600;
+  text-align: center;
+  color: var(--print-muted);
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print,
+  .print-toolbar {
+    display: none !important;
+  }
+
+  .print-doc--a4 {
+    width: 210mm;
+    min-height: auto;
+    max-height: none;
+    margin: 0;
+    padding: 9mm 10mm 8mm;
+    box-shadow: none;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .print-doc--a4 {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    font-size: 9pt;
+  }
+
+  .a4-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .a4-hero__photo {
+    width: 100px;
+  }
+
+  .a4-cases {
+    font-size: 8pt;
+  }
+
+  .a4-cases thead {
+    display: none;
+  }
+
+  .a4-cases tr {
+    display: block;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--print-border);
+  }
+
+  .a4-cases td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 4px 0;
+  }
+}
